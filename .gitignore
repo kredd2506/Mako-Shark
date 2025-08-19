@@ -1,0 +1,76 @@
+# ──────────────────────────────
+# OS / Editor Junk
+# ──────────────────────────────
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+*.tmp
+*.log
+.vscode/
+.idea/
+
+# ──────────────────────────────
+# Python
+# ──────────────────────────────
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+.eggs/
+.venv/
+env/
+venv/
+
+# ──────────────────────────────
+# Jupyter Notebooks
+# ──────────────────────────────
+.ipynb_checkpoints/
+*.ipynb~
+*.nbconvert.ipynb
+# nbstripout will remove outputs automatically on commit
+
+# ──────────────────────────────
+# Environment / Secrets
+# ──────────────────────────────
+.env
+*.env.*
+!env.example  # keep a template for safe sharing
+
+# ──────────────────────────────
+# Node.js (if any subprojects)
+# ──────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# ──────────────────────────────
+# Build / Dist
+# ──────────────────────────────
+dist/
+build/
+*.out
+*.err
+
+# ──────────────────────────────
+# Coverage / Testing
+# ──────────────────────────────
+.coverage
+coverage/
+*.lcov
+.cache/
+.nyc_output/
+
+# ──────────────────────────────
+# System / Backup
+# ──────────────────────────────
+*.bak
+*.old
+
+# ──────────────────────────────
+# Project-specific (safe cleanup)
+# ──────────────────────────────
+agse/__pycache__/
+k8s-monitor-app/__pycache__/
+reef/__pycache__/

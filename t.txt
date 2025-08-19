@@ -1,0 +1,5 @@
+    # Set OpenAI-compatible NRP API details
+    os.environ["OPENAI_API_KEY"] = "API-key-here"
+    os.environ["OPENAI_BASE_URL"] = "https://llm.nrp-nautilus.io/v1"
+
+token=67c77dd26c99fd7eaad7897e6c459990ef8118da68b840d1

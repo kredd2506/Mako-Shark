@@ -1,0 +1,153 @@
+[
+  {
+    "id": "mako_tc_0001",
+    "question": "Which Kubernetes resource ensures stable network identity and persistent storage for each replica, and what is its default update strategy?",
+    "decomposition": [
+      {
+        "id": "mako_tc_0001_a",
+        "question": "Which Kubernetes resource provides stable identity and storage for pods?",
+        "decomposition": [],
+        "answer": "StatefulSet",
+        "depends_on": [],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "StatefulSets",
+          "url": "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/"
+        }
+      },
+      {
+        "id": "mako_tc_0001_b",
+        "question": "What is the default update strategy for StatefulSets?",
+        "decomposition": [],
+        "answer": "RollingUpdate",
+        "depends_on": ["mako_tc_0001_a"],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "StatefulSet Update Strategy",
+          "url": "https://kubernetes.io/docs/concepts/workloads/controllers/statefulset/#update-strategies"
+        }
+      }
+    ],
+    "answer": {
+      "resource": "StatefulSet",
+      "default_update_strategy": "RollingUpdate"
+    },
+    "depends_on": [],
+    "evidence": {}
+  },
+  {
+    "id": "mako_tc_0002",
+    "question": "List the three Kubernetes probe types and the purpose of each.",
+    "decomposition": [
+      {
+        "id": "mako_tc_0002_a",
+        "question": "What are the three probe types in Kubernetes?",
+        "decomposition": [],
+        "answer": ["livenessProbe", "readinessProbe", "startupProbe"],
+        "depends_on": [],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "Liveness, Readiness and Startup Probes",
+          "url": "https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/"
+        }
+      },
+      {
+        "id": "mako_tc_0002_b",
+        "question": "Briefly describe the purpose of each probe.",
+        "decomposition": [],
+        "answer": {
+          "livenessProbe": "Restarts the container if the app is unhealthy.",
+          "readinessProbe": "Gates traffic until the app is ready to serve.",
+          "startupProbe": "Delays liveness until app has finished startup."
+        },
+        "depends_on": ["mako_tc_0002_a"],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "Probes Overview",
+          "url": "https://kubernetes.io/docs/concepts/configuration/liveness-readiness-startup-probes/"
+        }
+      }
+    ],
+    "answer": [
+      {"probe": "livenessProbe", "purpose": "restart when unhealthy"},
+      {"probe": "readinessProbe", "purpose": "only receive traffic when ready"},
+      {"probe": "startupProbe", "purpose": "grace period during startup"}
+    ],
+    "depends_on": [],
+    "evidence": {}
+  },
+  {
+    "id": "mako_tc_0003",
+    "question": "Which Prometheus HTTP endpoint is used for instant queries and what parameter carries the PromQL string?",
+    "decomposition": [
+      {
+        "id": "mako_tc_0003_a",
+        "question": "Identify the Prometheus HTTP API path for instant queries.",
+        "decomposition": [],
+        "answer": "/api/v1/query",
+        "depends_on": [],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "HTTP API | Prometheus",
+          "url": "https://prometheus.io/docs/prometheus/latest/querying/api/"
+        }
+      },
+      {
+        "id": "mako_tc_0003_b",
+        "question": "Name the parameter that carries the PromQL expression for an instant query.",
+        "decomposition": [],
+        "answer": "query",
+        "depends_on": ["mako_tc_0003_a"],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "HTTP API: query param",
+          "url": "https://prometheus.io/docs/prometheus/latest/querying/api/#instant-queries"
+        }
+      }
+    ],
+    "answer": {"endpoint": "/api/v1/query", "param": "query"},
+    "depends_on": [],
+    "evidence": {}
+  },
+  {
+    "id": "mako_tc_0004",
+    "question": "Which DCGM metric reflects instantaneous GPU utilization, and how do you compute average utilization by namespace in Prometheus?",
+    "decomposition": [
+      {
+        "id": "mako_tc_0004_a",
+        "question": "Name the metric for instantaneous GPU utilization in DCGM.",
+        "decomposition": [],
+        "answer": "DCGM_FI_DEV_GPU_UTIL",
+        "depends_on": [],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "NVIDIA DCGM Metrics",
+          "url": "https://docs.nvidia.com/datacenter/dcgm/latest/dcgm-user-guide/metrics.html"
+        }
+      },
+      {
+        "id": "mako_tc_0004_b",
+        "question": "Provide a PromQL expression to average utilization by namespace.",
+        "decomposition": [],
+        "answer": "avg by (namespace) (DCGM_FI_DEV_GPU_UTIL)",
+        "depends_on": ["mako_tc_0004_a"],
+        "evidence": {
+          "pageid": null,
+          "revid": null,
+          "title": "PromQL aggregation",
+          "url": "https://prometheus.io/docs/prometheus/latest/querying/operators/#aggregation-operators"
+        }
+      }
+    ],
+    "answer": {"metric": "DCGM_FI_DEV_GPU_UTIL", "promql": "avg by (namespace) (DCGM_FI_DEV_GPU_UTIL)"},
+    "depends_on": [],
+    "evidence": {}
+  }
+]

@@ -1,0 +1,38 @@
+[
+  {
+    "confirmed_task": "List all pods in the current namespace and return their names as a JSON array.",
+    "website": "",
+    "task_id": "mako_ab_01",
+    "instruction": "Provide final answer without formatting"
+  },
+  {
+    "confirmed_task": "Show the average GPU utilization by namespace using DCGM_FI_DEV_GPU_UTIL with threshold 10%. Return the tabulated text only.",
+    "website": "https://prometheus.nrp-nautilus.io/",
+    "task_id": "mako_ab_02",
+    "instruction": "Provide final answer without formatting"
+  },
+  {
+    "confirmed_task": "Search the docs for 'node affinity examples' and return the top 3 titles with URLs as a JSON list of objects {title, url}.",
+    "website": "https://www.google.com/",
+    "task_id": "mako_ab_03",
+    "instruction": "Provide final answer without formatting"
+  },
+  {
+    "confirmed_task": "Given a StatefulSet name 'db', describe it and return replicas and ready counts as {replicas, ready}.",
+    "website": "",
+    "task_id": "mako_ab_04",
+    "instruction": "Provide final answer without formatting"
+  },
+  {
+    "confirmed_task": "Return the Prometheus HTTP endpoint used for an instant query and the required parameter name as {endpoint, param}.",
+    "website": "https://prometheus.io/",
+    "task_id": "mako_ab_05",
+    "instruction": "Provide final answer without formatting"
+  },
+  {
+    "confirmed_task": "Show Kubernetes concepts reference table as plain text (no markdown fences).",
+    "website": "https://kubernetes.io/",
+    "task_id": "mako_ab_06",
+    "instruction": "Provide final answer without formatting"
+  }
+]
